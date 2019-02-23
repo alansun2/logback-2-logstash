@@ -76,7 +76,7 @@
 
 	<appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<level>error</level>
+			<level>info</level>
 		</filter>
 
 		<destination>127.0.0.1:4560</destination>
@@ -97,9 +97,9 @@
 		<appender-ref ref="delete-file"/>
 	</logger>
 
-	<root level="error">
+<!--	<root level="error">
 		<appender-ref ref="STASH" />
-	</root>
+	</root>-->
 
 	<!--生产环境:打印控制台和输出到文件-->
 	<springProfile name="prod">
