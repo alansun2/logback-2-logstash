@@ -19,6 +19,9 @@
 2. logback官方文档
 - https://logback.qos.ch
 3. 记录到文件
-TimeBasedRollingPolicy 与 SizeAndTimeBasedRollingPolicy
-SizeAndTimeBasedRollingPolicy extend TimeBasedRollingPolicy
-SizeAndTimeBasedRollingPolicy可以设置每个文件的大小，如果文件大于
+##### SizeAndTimeBasedRollingPolicy extend TimeBasedRollingPolicy
+##### SizeAndTimeBasedRollingPolicy可以设置maxFileSize(每个文件的大小，如果文件大于maxFileSize会重新生成一个文件)。
+##### fileNamePattern必须带%i(%i是生成文件时的下标)
+
+##### totalSizeCap: 总文件大小，大于该值会删除最先记录的日志 
+##### maxHistory：保存文件，根据 fileNamePattern中的时间表示不同值。i.g maxHistory = 6 fileNamePattern中有%d,则maxHistory表示只保存6天内的日志，如果fileNamePattern中有%d{yyyy-MM}，则表示保存6个月内的日志 
